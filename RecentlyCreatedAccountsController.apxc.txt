@@ -1,0 +1,6 @@
+public class RecentlyCreatedAccountsController {
+    @AuraEnabled
+    public static List<Account> getRecentlyCreatedAccounts() {
+        return [SELECT Id, Name, Phone, Number_of_Contacts__c, CreatedDate FROM Account ORDER BY CreatedDate DESC LIMIT 10];
+    }
+}

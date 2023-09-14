@@ -1,0 +1,40 @@
+({
+    doInit : function(component, event, helper) {
+        
+        component.set("v.columns", [
+            {
+                label: "Name",
+                fieldName: "Name",
+                type: "text",
+                initialWidth: 220,
+                editable: false,
+                sortable: true
+            },
+            {
+                label: "Phone",
+                fieldName: "Phone",
+                type: "Phone",
+                initialWidth: 200,
+                editable: false,
+                sortable: true
+            },
+            {
+                label: "Number of Contacts",
+                fieldName: "Number_of_Contacts__c",
+                type: "text",
+                initialWidth: 200,
+                editable: false,
+                sortable: true
+            } 
+        ]);
+        
+        var action = component.get("c.getRecentlyCreatedAccounts");
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.accounts", response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(action);
+    }
+})
