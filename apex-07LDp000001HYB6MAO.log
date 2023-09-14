@@ -1,0 +1,92 @@
+58.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: HttpCallout.makeCallout();
+23:37:48.0 (954598)|USER_INFO|[EXTERNAL]|005Dp000002C1Rl|prachi@billingspecialist.com|(GMT-07:00) Pacific Daylight Time (America/Los_Angeles)|GMT-07:00
+23:37:48.0 (994960)|EXECUTION_STARTED
+23:37:48.0 (1003849)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+23:37:48.0 (1329614)|HEAP_ALLOCATE|[79]|Bytes:3
+23:37:48.0 (1404251)|HEAP_ALLOCATE|[84]|Bytes:152
+23:37:48.0 (1423549)|HEAP_ALLOCATE|[399]|Bytes:408
+23:37:48.0 (1443251)|HEAP_ALLOCATE|[412]|Bytes:408
+23:37:48.0 (1461088)|HEAP_ALLOCATE|[520]|Bytes:48
+23:37:48.0 (1487321)|HEAP_ALLOCATE|[139]|Bytes:6
+23:37:48.0 (1513800)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:1
+23:37:48.0 (1643531)|STATEMENT_EXECUTE|[1]
+23:37:48.0 (1647988)|STATEMENT_EXECUTE|[1]
+23:37:48.0 (1728651)|HEAP_ALLOCATE|[52]|Bytes:5
+23:37:48.0 (1765173)|HEAP_ALLOCATE|[58]|Bytes:5
+23:37:48.0 (1777023)|HEAP_ALLOCATE|[66]|Bytes:7
+23:37:48.0 (1823201)|SYSTEM_MODE_ENTER|false
+23:37:48.0 (1878671)|HEAP_ALLOCATE|[1]|Bytes:5
+23:37:48.0 (2845383)|HEAP_ALLOCATE|[1]|Bytes:1
+23:37:48.0 (2869649)|HEAP_ALLOCATE|[1]|Bytes:2
+23:37:48.0 (2931561)|METHOD_ENTRY|[1]|01pDp000009ZVmm|HttpCallout.HttpCallout()
+23:37:48.0 (2943135)|STATEMENT_EXECUTE|[1]
+23:37:48.0 (2948910)|STATEMENT_EXECUTE|[1]
+23:37:48.0 (2973990)|METHOD_EXIT|[1]|HttpCallout
+23:37:48.0 (3045519)|METHOD_ENTRY|[1]|01pDp000009ZVmm|HttpCallout.makeCallout()
+23:37:48.0 (3098706)|STATEMENT_EXECUTE|[2]
+23:37:48.0 (3100954)|STATEMENT_EXECUTE|[3]
+23:37:48.0 (3140677)|VARIABLE_SCOPE_BEGIN|[3]|http|System.Http|true|false
+23:37:48.0 (3492327)|VARIABLE_ASSIGNMENT|[3]|http|"System.Http[]"|0x1e0cd654
+23:37:48.0 (3508609)|STATEMENT_EXECUTE|[4]
+23:37:48.0 (3534147)|VARIABLE_SCOPE_BEGIN|[4]|request|System.HttpRequest|true|false
+23:37:48.0 (3625394)|VARIABLE_ASSIGNMENT|[4]|request|"System.HttpRequest[Endpoint=null, Method=null]"|0x5d849b79
+23:37:48.0 (3635508)|STATEMENT_EXECUTE|[5]
+23:37:48.0 (3640765)|HEAP_ALLOCATE|[5]|Bytes:48
+23:37:48.0 (3797222)|STATEMENT_EXECUTE|[6]
+23:37:48.0 (3801650)|HEAP_ALLOCATE|[6]|Bytes:3
+23:37:48.0 (3833195)|STATEMENT_EXECUTE|[7]
+23:37:48.0 (3945962)|CALLOUT_REQUEST|[7]|System.HttpRequest[Endpoint=https://postman-echo.com/get?foo1=bar1&foo2=bar2, Method=GET]
+23:37:48.0 (37566333)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:798
+23:37:48.0 (57814080)|CALLOUT_RESPONSE|[7]|System.HttpResponse[Status=OK, StatusCode=200]
+23:37:48.0 (57847417)|HEAP_ALLOCATE|[7]|Bytes:505
+23:37:48.0 (57888473)|VARIABLE_SCOPE_BEGIN|[7]|response|System.HttpResponse|true|false
+23:37:48.0 (57990418)|VARIABLE_ASSIGNMENT|[7]|response|"System.HttpResponse[Status=OK, StatusCode=200]"|0x2c674e7b
+23:37:48.0 (58068274)|STATEMENT_EXECUTE|[8]
+23:37:48.0 (58071275)|STATEMENT_EXECUTE|[9]
+23:37:48.0 (58133370)|HEAP_ALLOCATE|[9]|Bytes:499
+23:37:48.0 (58147176)|VARIABLE_SCOPE_BEGIN|[9]|responseBody|String|false|false
+23:37:48.0 (58179321)|VARIABLE_ASSIGNMENT|[9]|responseBody|"{\n  \"args\": {\n    \"f (479 more) ..."
+23:37:48.0 (58185938)|STATEMENT_EXECUTE|[10]
+23:37:48.0 (58189515)|HEAP_ALLOCATE|[10]|Bytes:10
+23:37:48.0 (58211071)|HEAP_ALLOCATE|[10]|Bytes:509
+23:37:48.0 (58262781)|USER_DEBUG|[10]|DEBUG|Response: {
+  "args": {
+    "foo1": "bar1",
+    "foo2": "bar2"
+  },
+  "headers": {
+    "x-forwarded-proto": "https",
+    "x-forwarded-port": "443",
+    "host": "postman-echo.com",
+    "x-amzn-trace-id": "Root=1-6502aa3c-7455e43c6af79f8e60842f92",
+    "user-agent": "SFDC-Callout/58.0",
+    "sfdc_stack_depth": "1",
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2"
+  },
+  "url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2"
+}
+23:37:48.0 (58284148)|METHOD_EXIT|[1]|01pDp000009ZVmm|HttpCallout.makeCallout()
+23:37:48.0 (58300511)|SYSTEM_MODE_EXIT|false
+23:37:48.60 (60701549)|CUMULATIVE_LIMIT_USAGE
+23:37:48.60 (60701549)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 1 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:37:48.60 (60701549)|CUMULATIVE_LIMIT_USAGE_END
+
+23:37:48.0 (60791783)|CODE_UNIT_FINISHED|execute_anonymous_apex
+23:37:48.0 (60809878)|EXECUTION_FINISHED
