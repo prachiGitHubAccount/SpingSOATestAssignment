@@ -1,0 +1,53 @@
+public virtual with sharing class TriggerHandlerBase {
+
+    public void run() {
+        // dispatch to the correct handler method
+        if(Trigger.isBefore) {
+            if (Trigger.isInsert) {
+                this.beforeInsert(Trigger.New);
+            }
+            else if(Trigger.isUpdate) {
+                this.beforeUpdate(Trigger.oldMap, Trigger.newMap);
+            }
+            else if(Trigger.isDelete) {
+                this.beforeDelete(Trigger.oldMap);
+            }
+        }
+        // Is After
+        else {
+            if(Trigger.isInsert) {
+                this.afterInsert(Trigger.New);
+            }
+            else if(Trigger.isUpdate) {
+                this.afterUpdate(Trigger.oldMap, Trigger.newMap);
+            }
+            else if(Trigger.isDelete) {
+                this.afterDelete(Trigger.oldMap);
+            }
+            else if(Trigger.isUndelete) {
+                this.afterUndelete(Trigger.New);
+            }
+        }
+    }
+
+    @TestVisible
+    protected virtual void beforeInsert(List<SObject> newRecords) { }
+
+    @TestVisible
+    protected virtual void beforeUpdate(Map<Id, SObject> oldRecordsMap, Map<Id, SObject> newRecordsMap) { }
+
+    @TestVisible
+    protected virtual void beforeDelete(Map<Id, SObject> deletedRecordsMap) { }
+
+    @TestVisible
+    protected virtual void afterInsert(List<SObject> newRecords) { }
+
+    @TestVisible
+    protected virtual void afterUpdate(Map<Id, SObject> oldRecordsMap, Map<Id, SObject> newRecordsMap) { }
+
+    @TestVisible
+    protected virtual void afterDelete(Map<Id, SObject> deletedRecordsMap) { }
+
+    @TestVisible
+    protected virtual void afterUndelete(List<SObject> undeletedRecords) { }
+}
